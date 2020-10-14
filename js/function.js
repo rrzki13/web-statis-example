@@ -400,6 +400,7 @@ function ValidateEmail(r) {
 
 function justText(r) {
   const id = r.getAttribute("id");
+  alert(id);
   if (/^[a-z A-Z]*$/.test(r.value)) {
     get("#" + id + "TextValidate").innerHTML = "";
     return true;
