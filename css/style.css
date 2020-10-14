@@ -282,10 +282,19 @@ a {
   pointer-events: none;
   transition: .5s;
 }
+
+.d-inline-in-md {
+  display: block;
+}
  
 @media (max-width: 768px) {
   .none-in-md {
     display: none;
+  }
+
+  .d-inline-in-md {
+    display: inline;
+    margin-right: 1rem;
   }
 
   #pilihStasiun1 {
@@ -300,7 +309,7 @@ a {
   }
 
   .show-in-md {
-    display: block;
+    display: inline;
   }
 
   .footer {
