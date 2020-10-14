@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Gotu&display=swap');
+body {
+	background-color: #e8fafe;
+}
+.card-login {
+	margin-top: 5rem;
+	padding: 10px;
+	min-height: 380px;
+	background-color: #fff;
+	box-shadow: 0px 3px 6px 1px rgba(112,112,112,1);
+}
+.login-title {
+	font-family: 'Gotu', sans-serif;
+}
+.inp-login {
+	height: 50px;
+	padding: 10px;
+	border-radius: 0px;
+}
+#usernameValidate, #passwordValidate, #usernameValidateSuccess, #passwordValidateSuccess {
+	margin-top: -2rem;
+	display: none;
+}
+#sign-in {
+	transition: .5s;
+}
+#sign-in:hover {
+	background: #248EFF;
+}
