@@ -1,0 +1,336 @@
+* {
+  font-family: "Roboto", sans-serif;
+}
+body {
+  overflow-x: hidden;
+}
+.blank {
+  width: 100vw;
+  height: 100vw;
+  background-color: rgba(0, 0, 0, 0.8);
+  position: fixed;
+  z-index: 8;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.5s;
+  overflow: hidden;
+}
+#card-main {
+  margin-top: -8rem;
+  z-index: 9;
+  min-height: 300px;
+}
+a {
+  text-decoration: none;
+}
+.iconInCardRound {
+  font-size: 50pt;
+}
+.cardRound {
+  background-color: #fff;
+  width: 161px;
+  height: 161px;
+  border-radius: 50%;
+  border: 5px solid #3f9ceb;
+}
+.col {
+  width: auto;
+}
+.primary {
+  color: #3f9ceb;
+}
+.mt-icon {
+  margin-top: 2.7rem;
+}
+.footer {
+  width: 100%;
+  height: auto;
+}
+.footer {
+  padding-top: 20px;
+  position: relative;
+  margin-top: 50px;
+  width: 100%;
+  height: 35vh;
+  padding-bottom: 10px;
+  background: #3f9ceb;
+}
+
+.wrapper {
+  position: absolute;
+  left: 250px;
+  top: 55px;
+}
+
+.wrapper label {
+  color: #000;
+  font-family: "Sniglet", cursive;
+  letter-spacing: 1px;
+  font-size: 20px;
+  font-weight: 500;
+  margin-left: 10px;
+}
+
+.wrapper .button {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  margin: 0 5px;
+  background: #fff;
+  border-radius: 50px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  margin-top: 0.5rem;
+  margin-bottom: 2.5rem;
+  transform: translateX(585px);
+  transition: all 0.5s ease-out;
+  overflow: hidden;
+}
+
+.wrapper .button:nth-child(1):hover .icon {
+  color: #1877f2;
+  background: #1877f2;
+}
+
+.wrapper .button:nth-child(2):hover .icon {
+  color: #1da1f2;
+  background: #1da1f2;
+}
+
+.wrapper .button:nth-child(3):hover .icon {
+  color: #ea4c89;
+  background: #ea4c89;
+}
+
+.wrapper .button .icon {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  line-height: 50px;
+  box-sizing: border-box;
+  text-align: center;
+  transition: all 0.5s ease-out;
+}
+
+.wrapper .button .icon i {
+  color: #000;
+  font-size: 20px;
+  line-height: 50px;
+  transition: 0.5s;
+}
+
+.wrapper .button:hover .icon i {
+  color: #fff;
+}
+
+.wrapper .button:hover {
+  width: 200px;
+}
+
+.footer .container2 {
+  max-width: 80%;
+  height: 100%;
+  position: relative;
+}
+
+.footer .container2 .left-side {
+  position: absolute;
+  left: 150px;
+  top: 60px;
+}
+
+.footer .container2 .right-side {
+  position: absolute;
+  left: 550px;
+  top: 60px;
+}
+
+.footer .container2 .left-side h3,
+.footer .container2 .right-side h3 {
+  color: #fff;
+  font-family: "Open Sans Condensed", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 30px;
+}
+
+.footer .container2 .left-side p,
+.footer .container2 .right-side p {
+  font-size: 12px;
+  margin-left: 42px;
+  letter-spacing: 2px;
+  color: #fff;
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+}
+
+.footerLine {
+  position: absolute;
+  left: 720px;
+  top: 80px;
+  background: #fff;
+  width: 100px;
+  height: 2px;
+  transform: rotate(90deg);
+  border: none;
+}
+
+.show-in-md {
+  display: none;
+}
+
+.list-group-item {
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.btn {
+  cursor: pointer;
+}
+
+.list-group-item:hover {
+  background-color: #007bff;
+  color: #fff;
+}
+
+#dariStasiunChoose {
+  display: none;
+  opacity: 0;
+  transition: 0.5s;
+}
+
+#keStasiunChoose {
+  display: none;
+  opacity: 0;
+  transition: 0.5s;
+}
+
+#jmlTiket {
+  background-color: auto;
+}
+
+.biggerFont {
+  font-size: 13pt;
+}
+
+#jmlTiketCard {
+  display: none;
+  opacity: 0;
+  transition: 0.5s;
+}
+
+#pilihStasiun1 {
+  z-index: 10;
+  margin-top: -9rem;
+  border-color: 1px solid #999;
+  background-color: #fff;
+}
+
+#pilihStasiun2 {
+  margin-left: 8rem;
+  z-index: 10;
+  margin-top: -9rem;
+  border-color: 1px solid #999;
+  background-color: #fff;
+}
+
+#ticketResult {
+  display: none;
+}
+
+.point {
+  cursor: pointer;
+}
+
+#theTiket {
+  display: none;
+}
+
+.card-container {
+  transition: 0.3s;
+}
+
+.list-group {
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+#load {
+  opacity: 0;
+  transition: 0.5;
+}
+
+#receiptTitle,
+#receiptCard {
+  opacity: 0;
+  position: absolute;
+  pointer-events: none;
+  transition: 0.5s;
+}
+
+#lihatDetail {
+  display: none;
+}
+
+#cardShowTiket, #tempCard {
+  z-index: 11;
+}
+
+#cardShowTiket {
+  opacity: 0;
+  pointer-events: none;
+  transition: .5s;
+}
+ 
+@media (max-width: 768px) {
+  .none-in-md {
+    display: none;
+  }
+
+  #pilihStasiun1 {
+    width: 60%;
+    margin-top: -32rem;
+  }
+
+  #pilihStasiun2 {
+    width: 60%;
+    margin-left: 0rem;
+    margin-top: -25rem;
+  }
+
+  .show-in-md {
+    display: block;
+  }
+
+  .footer {
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+  .footer .container2 .left-side {
+    top: 40px;
+  }
+
+  .right-side {
+    display: none;
+  }
+
+  .wrapper {
+    display: none;
+  }
+
+  .footerLine {
+    display: none;
+  }
+
+  .blank {
+    width: 100vw;
+    height: 150vw;
+    background-color: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    z-index: 8;
+    opacity: 0;
+    transition: 0.5s;
+    overflow: hidden;
+  }
+}
