@@ -321,6 +321,13 @@ a {
   height: 25px;
   background-color: #f67524;
 }
+
+#theTiketHistory {
+  opacity: 0;
+  transition: .5s;
+  z-index: 9;
+  pointer-events: none;
+}
  
 @media (max-width: 768px) {
   .none-in-md {
@@ -374,7 +381,7 @@ a {
 
   .blank {
     width: 100vw;
-    height: 150vw;
+    height: 1500vw;
     background-color: rgba(0, 0, 0, 0.8);
     position: fixed;
     z-index: 8;
