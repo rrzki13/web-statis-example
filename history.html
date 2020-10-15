@@ -194,6 +194,68 @@
 
     <!-- * /restore -->
 
+    <!-- * Tiket -->
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-6 p-2 position-absolute" style="z-index: 9;">
+          <div class="card-tiket shadow">
+            <div class="headTiket"></div>
+            <div class="bodyTiket user-select-none">
+              <div class="container">
+                <div class="row mt-1">
+                  <div class="col-6">
+                    <img src="img/kai_2.png" width="50" />
+                  </div>
+                  <div class="col-6 text-center h5">
+                    BOARDING PASS
+                  </div>
+                </div>
+                <div class="row mt-2">
+                  <div class="col-6">
+                    <div class="row overflow-hidden" style="max-height: 50px;">
+                      <div class="col-6">
+                        <small>nama / name</small><br />
+                        <small class="font-weight-bold">Rizki Ramadhan</small>
+                      </div>
+                      <div class="col-6">
+                        <small>no. pesanan</small><br />
+                        <small class="font-weight-bold">160259771197911</small>
+                      </div>
+                    </div>
+                    <div class="row overflow-hidden" style="max-height: 50px;">
+                      <div class="col-6">
+                        <small>kereta / train</small><br />
+                        <small class="font-weight-bold">Argo Parahyangan</small>
+                      </div>
+                      <div class="col-6">
+                        <small>kelas / class</small><br />
+                        <small class="font-weight-bold">Ekonomi</small>
+                      </div>
+                    </div>
+                    <div class="row overflow-hidden" style="max-height: 50px;">
+                      <div class="col-6">
+                        <small>berangkat</small><br />
+                        <small class="font-weight-bold">Aekloba (AKB)</small>
+                      </div>
+                      <div class="col-6">
+                        <small>tiba</small><br />
+                        <small class="font-weight-bold">Argopuro (AGO)</small>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-6">
+                    <svg id="barcodeTiketHistory"></svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="footTiket"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- * /Tiket -->
+
     <!-- footer -->
     <footer div class="footer">
       <div class="container2">
@@ -239,6 +301,7 @@
       src="https://kit.fontawesome.com/d1a508a7c1.js"
       crossorigin="anonymous"
     ></script>
+    <script src="js/JsBarcode.all.min.js"></script>
     <script src="js/function.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script src="js/history.js"></script>

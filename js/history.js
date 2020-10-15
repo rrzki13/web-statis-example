@@ -51,3 +51,15 @@ get("#restore").addEventListener("click", function () {
   let href = this.getAttribute("data-id");
   document.location.href = href;
 });
+
+setTimeout(() => {
+  JsBarcode("#barcodeTiketHistory", 160259771197911, {
+    format: "codabar",
+    lineColor: "#000",
+    width: 1.5,
+    height: 39,
+    displayValue: true,
+    background: "#f5f5f5",
+    fontSize: "17",
+  });
+}, 100);

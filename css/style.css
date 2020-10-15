@@ -305,6 +305,22 @@ a {
   width: 200px;
   color: #007bff;
 }
+
+.card-tiket {
+  margin-top: -25rem;
+  min-height: 250px;
+  z-index: 10;
+}
+
+.bodyTiket {
+  height: 200px;
+  background-color: #f5f5f5;
+}
+
+.headTiket, .footTiket {
+  height: 25px;
+  background-color: #f67524;
+}
  
 @media (max-width: 768px) {
   .none-in-md {
