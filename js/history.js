@@ -46,3 +46,8 @@ get(".blank").addEventListener("click", function () {
   this.style.opacity = 0;
   this.style.pointerEvents = "none";
 });
+
+get("#restore").addEventListener("click", function () {
+  let href = this.getAttribute("data-id");
+  document.location.href = href;
+});

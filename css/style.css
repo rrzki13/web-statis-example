@@ -286,10 +286,34 @@ a {
 .d-inline-in-md {
   display: block;
 }
+
+#restore {
+  width: 65px;
+  cursor: pointer;
+  height: 65px;
+  transition: .5s;
+  border-radius: 32px;
+  background-color: #fff;
+  position: fixed;
+  color: #fff;
+  overflow: hidden;
+  margin-top: -5rem;
+  z-index: 7;
+}
+
+#restore:hover {
+  width: 200px;
+  color: #007bff;
+}
  
 @media (max-width: 768px) {
   .none-in-md {
     display: none;
+  }
+
+  #restore {
+    margin-top: -10rem;
+    margin-right: 3rem;
   }
 
   .d-inline-in-md {
