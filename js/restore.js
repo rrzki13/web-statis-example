@@ -1,5 +1,11 @@
 const restoreBtn = getAll(".restoreTiket");
 const hapusBtn = getAll(".hapusTiket");
+const idCard = [];
+
+restoreBtn.forEach((i) => {
+  let id = i.getAttribute("id");
+  idCard.push(id);
+});
 
 const Toast = Swal.mixin({
   toast: true,
@@ -21,6 +27,14 @@ for (let i = 0; i < restoreBtn.length; i++) {
           icon: "success",
           title: "Tiket sukses direstore",
         });
+
+        let id = this.getAttribute("id");
+        const index = idCard.indexOf(id);
+        if (index > -1) {
+          idCard.splice(index, 1);
+        }
+
+        checkArray();
 
         let card = this.parentElement.parentElement.parentElement.parentElement
           .parentElement.parentElement;
@@ -54,6 +68,14 @@ for (let i = 0; i < hapusBtn.length; i++) {
           title: "Tiket sukses dihapus",
         });
 
+        let id = this.getAttribute("id");
+        const index = idCard.indexOf(id);
+        if (index > -1) {
+          idCard.splice(index, 1);
+        }
+
+        checkArray();
+
         let card = this.parentElement.parentElement.parentElement.parentElement
           .parentElement.parentElement;
         let cardParent = this.parentElement.parentElement.parentElement
@@ -68,3 +90,16 @@ for (let i = 0; i < hapusBtn.length; i++) {
     });
   });
 }
+
+const checkArray = () => {
+  if (idCard.length == 0) {
+    setTimeout(() => {
+      const noRestore = getAll("#noRestore");
+      noRestore.forEach((i) => {
+        i.style.opacity = "1";
+        i.style.position = "static";
+        i.style.pointerEvent = "visible";
+      });
+    }, 500);
+  }
+};

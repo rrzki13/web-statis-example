@@ -337,6 +337,13 @@ a {
   transition: .5s;
 }
  
+#noRestore {
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  transition: 0.5s;
+}
+
 @media (max-width: 768px) {
   .none-in-md {
     display: none;
