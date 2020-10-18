@@ -328,6 +328,14 @@ a {
   z-index: 9;
   pointer-events: none;
 }
+
+.card {
+  transition: .5s;
+}
+
+.cardElement {
+  transition: .5s;
+}
  
 @media (max-width: 768px) {
   .none-in-md {
