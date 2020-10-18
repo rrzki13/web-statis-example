@@ -96,6 +96,7 @@ const checkArray = () => {
     setTimeout(() => {
       const noRestore = getAll("#noRestore");
       noRestore.forEach((i) => {
+        get("#restoreParent").style.display = "none";
         i.style.opacity = "1";
         i.style.position = "static";
         i.style.pointerEvent = "visible";
