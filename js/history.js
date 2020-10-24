@@ -34,9 +34,9 @@ for (i = 0; i < deleteCard.length; i++) {
         checkArray();
 
         card.style.opacity = "0";
+        card.style.pointerEvents = "none";
         setTimeout(function () {
           card.style.position = "absolute";
-          card.style.pointerEvent = "none";
         }, 500);
 
         Toast.fire({

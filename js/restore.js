@@ -41,10 +41,10 @@ for (let i = 0; i < restoreBtn.length; i++) {
         let cardParent = this.parentElement.parentElement.parentElement
           .parentElement.parentElement.parentElement.parentElement;
         card.style.opacity = "0";
+        card.style.pointerEvents = "none";
         setTimeout(() => {
           card.style.position = "absolute";
           cardParent.style.position = "absolute";
-          card.style.pointerEvent = "none";
         }, 500);
       }
     });
@@ -81,10 +81,10 @@ for (let i = 0; i < hapusBtn.length; i++) {
         let cardParent = this.parentElement.parentElement.parentElement
           .parentElement.parentElement.parentElement.parentElement;
         card.style.opacity = "0";
+        card.style.pointerEvents = "none";
         setTimeout(() => {
           card.style.position = "absolute";
           cardParent.style.position = "absolute";
-          card.style.pointerEvent = "none";
         }, 500);
       }
     });
