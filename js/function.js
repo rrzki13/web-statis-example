@@ -407,3 +407,28 @@ function justText(r) {
   get("#" + id + "TextValidate").innerHTML = "Hanya menggunakan boleh huruf";
   return false;
 }
+
+function justPassword(r, report = true) {
+  const id = r.getAttribute("id");
+  if (r.value == "") {
+    if (report) {
+      get("#" + id + "PasswordValidate").innerHTML = "Harus diisi";
+    }
+    return false;
+  } else if (r.value.length < 5) {
+    if (report) {
+      get("#" + id + "PasswordValidate").innerHTML = "Minimal 5 karakter";
+    }
+    return false;
+  } else if (r.value.length > 21) {
+    if (report) {
+      get("#" + id + "PasswordValidate").innerHTML = "Maksimal 21 karakter";
+    }
+    return false;
+  } else {
+    if (report) {
+      get("#" + id + "PasswordValidate").innerHTML = "";
+    }
+    return true;
+  }
+}

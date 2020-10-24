@@ -10,9 +10,6 @@ get("#namaBelakang").addEventListener("keyup", function () {
 
 get("#username").addEventListener("keyup", function () {
   if (justUsername(this)) {
-    if (invalidUsername.indexOf(this.value.toLowerCase()) != -1) {
-      get("#usernameUsernameValidate").innerHTML = "Username tidak tersedia";
-    }
     validateRegist();
   }
   validateRegist();
@@ -20,9 +17,6 @@ get("#username").addEventListener("keyup", function () {
 
 get("#email").addEventListener("keyup", function () {
   if (ValidateEmail(this)) {
-    if (invalidEmail.indexOf(this.value) != -1) {
-      get("#emailEmailValidate").innerHTML = "Email tidak tersedia";
-    }
     validateRegist();
   }
   validateRegist();
@@ -32,6 +26,10 @@ get("#password").addEventListener("keyup", function () {
   justPassword(this);
   validateRegist();
 });
+
+get("#sign-up").addEventListener("click", function() {
+  document.location.href = "index.html"
+})
 
 function validateRegist() {
   if (
