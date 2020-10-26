@@ -14,6 +14,7 @@ const Toast = Swal.mixin({
 });
 
 for (i = 0; i < deleteCard.length; i++) {
+  console.log(deleteCard[i]);
   deleteCard[i].addEventListener("click", function () {
     Swal.fire({
       title: "Apa kamu yakin ingin mengahapus tiket?",
