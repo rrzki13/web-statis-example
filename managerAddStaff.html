@@ -144,8 +144,8 @@
                   <p>User Data</p>
                 </a>
               </li>
-              <li class="nav-item menu-open">
-                <a href="#" class="nav-link active has-treeview">
+              <li class="nav-item">
+                <a href="#" class="nav-link has-treeview">
                   <i class="nav-icon ion ion-stats-bars"></i>
                   <p>
                     Train
@@ -160,7 +160,7 @@
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="managerTrain.html" class="nav-link active">
+                    <a href="managerTrain.html" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
                       <p>Train Data</p>
                     </a>
@@ -168,7 +168,7 @@
                 </ul>
               </li>
               <li class="nav-item">
-                <a href="managerAddStaff.html" class="nav-link">
+                <a href="managerAddStaff.html" class="nav-link active">
                   <i class="nav-icon ion ion-person-add"></i>
                   <p>Add Staff</p>
                 </a>
@@ -199,11 +199,11 @@
           <div class="container-fluid">
             <div class="row mb-2">
               <div class="col-sm-6">
-                <h1>Train Data</h1>
+                <h1>Add Staff</h1>
               </div>
               <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
-                  <li class="breadcrumb-item"><a href="#">Train</a></li>
+                  <li class="breadcrumb-item"><a href="#">Add Staff</a></li>
                   <li class="breadcrumb-item active">Dashboard</li>
                 </ol>
               </div>
@@ -217,40 +217,132 @@
           <div class="container-fluid">
             <!-- * table content -->
             <div class="row">
-              <div class="col-12">
-                <div class="card">
-                  <div class="card-header">
-                    <h4>Train Data</h4>
-                  </div>
-                  <!-- /.card-header -->
-                  <div class="card-body">
-                    <table
-                      id="dataMobil"
-                      class="table table-bordered table-striped"
-                    >
-                      <thead>
-                        <tr>
-                          <th>No</th>
-                          <th>Train Name</th>
-                          <th>Train Fare</th>
-                          <th>Train Class</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td>1</td>
-                          <td>Bima</td>
-                          <td>100.000</td>
-                          <td>Ekonomi</td>
-                        </tr>
-                      </tbody>
-                    </table>
+              <div class="col-md-3">
+                <!-- Profile Image -->
+                <div class="card card-primary card-outline">
+                  <div class="card-body box-profile">
+                    <div class="text-center">
+                      <img
+                        class="profile-user-img img-fluid img-circle"
+                        id="imgPreview"
+                        src="dist/img/user1-128x128.jpg"
+                        alt="User profile picture"
+                      />
+                    </div>
+                    <h3 class="profile-username text-center" id="staffUsername">
+                      Staff
+                    </h3>
+                    <p class="text-muted text-center" id="staffEmail">
+                      staff@gmail.com
+                    </p>
                   </div>
                   <!-- /.card-body -->
                 </div>
                 <!-- /.card -->
               </div>
               <!-- /.col -->
+              <!-- left column -->
+              <div class="col-md-9">
+                <!-- general form elements -->
+                <div class="card card-primary">
+                  <div class="card-header">
+                    <h3 class="card-title">Add Staff</h3>
+                  </div>
+                  <!-- /.card-header -->
+                  <!-- form start -->
+                  <form role="form">
+                    <div class="card-body">
+                      <div class="row">
+                        <div class="col-6">
+                          <div class="form-group">
+                            <label for="usernameStaff">Username</label>
+                            <input
+                              type="text"
+                              class="form-control"
+                              id="usernameStaff"
+                              placeholder="Enter username"
+                            />
+                          </div>
+                        </div>
+                        <div class="col-6">
+                          <div class="form-group">
+                            <label for="emailStaff">Email address</label>
+                            <input
+                              type="email"
+                              class="form-control"
+                              id="emailStaff"
+                              placeholder="Enter email"
+                            />
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="row">
+                        <div class="col-6">
+                          <div class="form-group">
+                            <label for="firstNameStaff">First Name</label>
+                            <input
+                              type="text"
+                              class="form-control"
+                              id="firstNameStaff"
+                              placeholder="Enter username"
+                            />
+                          </div>
+                        </div>
+                        <div class="col-6">
+                          <div class="form-group">
+                            <label for="lastNameStaff">Last Name</label>
+                            <input
+                              type="text"
+                              class="form-control"
+                              id="lastNameStaff"
+                              placeholder="Enter email"
+                            />
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label for="exampleInputPassword1">Password</label>
+                        <input
+                          type="password"
+                          class="form-control"
+                          id="exampleInputPassword1"
+                          placeholder="Password"
+                        />
+                      </div>
+                      <div class="form-group">
+                        <label for="staffProfile">Input Profile</label>
+                        <div class="input-group">
+                          <div class="custom-file">
+                            <input
+                              type="file"
+                              class="custom-file-input"
+                              id="staffProfile"
+                            />
+                            <label
+                              class="custom-file-label"
+                              for="exampleInputFile"
+                              >Choose file</label
+                            >
+                          </div>
+                          <div class="input-group-append">
+                            <span class="input-group-text" id="">Upload</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /.card-body -->
+
+                    <div class="card-footer">
+                      <button type="submit" class="btn btn-primary">
+                        Submit
+                      </button>
+                    </div>
+                  </form>
+                </div>
+                <!-- /.card -->
+              </div>
             </div>
             <!-- /.row -->
           </div>
@@ -293,6 +385,8 @@
     <script src="dist/js/adminlte.min.js"></script>
     <!-- AdminLTE for demo purposes -->
     <script src="dist/js/demo.js"></script>
+    <!-- Bs custom file input -->
+    <script src="adminLte/js/bs-custom-file-input.min.js"></script>
     <!-- My Script -->
     <script>
       $(function () {
@@ -300,6 +394,88 @@
           responsive: true,
           autoWidth: false,
         });
+
+        bsCustomFileInput.init();
+
+        $("#usernameStaff").keyup(function () {
+          let val = $("#usernameStaff").val();
+          if (val.length > 0) {
+            $("#staffUsername").html(val);
+          } else {
+            $("#staffUsername").html("Staff");
+          }
+        });
+
+        $("#emailStaff").keyup(function () {
+          let val = $("#emailStaff").val();
+          if (val.length > 0) {
+            $("#staffEmail").html(val);
+          } else {
+            $("#staffEmail").html("staff@gmail.com");
+          }
+        });
+
+        $("#staffProfile").change(function() {
+          const input = document.getElementById("staffProfile");
+          const imgPreview = document.querySelector("#imgPreview");
+
+          const file = new FileReader();
+          file.readAsDataURL(input.files[0]);
+
+          file.onload = function (e) {
+            imgPreview.src = e.target.result;
+          };
+        })
+
+        // auto type
+        // const words = ["Rizki Ramadhan"];
+        // let i = 0;
+        // let timer;
+        // let check = function () {
+        //   if ($("#usernameStaff").val() == "") {
+        //     typingEffect();
+        //   }
+        // };
+
+        // $("#usernameStaff").focus(function () {
+        //   $("#usernameStaff").val("Staff");
+        //   setTimeout(() => {
+        //     check();
+        //   }, 500);
+        // });
+
+        // function typingEffect() {
+        //   let word = words[i].split("");
+        //   var loopTyping = function () {
+        //     if (word.length > 0) {
+        //       document.getElementById("usernameStaff").value += word.shift();
+        //     } else {
+        //       setTimeout(() => {
+        //         deletingEffect();
+        //       }, 1500);
+        //       return false;
+        //     }
+        //     timer = setTimeout(loopTyping, 80);
+        //   };
+
+        //   loopTyping();
+
+        //   function deletingEffect() {
+        //     let word = words[i].split("");
+        //     var loopDeleting = function () {
+        //       if (word.length > 0) {
+        //         word.pop();
+        //         document.getElementById("usernameStaff").value = word.join("");
+        //         timer = setTimeout(loopDeleting, 80);
+        //       } else {
+        //         setTimeout(() => {
+        //           typingEffect();
+        //         }, 1500);
+        //       }
+        //     };
+        //     loopDeleting();
+        //   }
+        // }
       });
     </script>
   </body>
