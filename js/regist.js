@@ -44,34 +44,3 @@ function validateRegist() {
     get("#sign-up").setAttribute("disabled", "disabled");
   }
 }
-
-function justUsername(r, report = true) {
-  const id = r.getAttribute("id");
-  if (r.value == "") {
-    if (report) {
-      get("#" + id + "UsernameValidate").innerHTML = "Harus diisi";
-    }
-    return false;
-  } else if (r.value.length < 5) {
-    if (report) {
-      get("#" + id + "UsernameValidate").innerHTML = "Minimal 5 karakter";
-    }
-    return false;
-  } else if (r.value.length > 11) {
-    if (report) {
-      get("#" + id + "UsernameValidate").innerHTML = "Maksimal 10 karakter";
-    }
-    return false;
-  } else if (/^[a-zA-Z0-9]*$/.test(r.value)) {
-    if (report) {
-      get("#" + id + "UsernameValidate").innerHTML = "";
-    }
-    return true;
-  } else {
-    if (report) {
-      get("#" + id + "UsernameValidate").innerHTML =
-        "Hanya boleh menggunakan huruf dan angka";
-    }
-    return false;
-  }
-}

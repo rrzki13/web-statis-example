@@ -262,6 +262,10 @@
                               id="usernameStaff"
                               placeholder="Enter username"
                             />
+                            <small
+                              class="text-danger"
+                              id="usernameStaffUsernameValidate"
+                            ></small>
                           </div>
                         </div>
                         <div class="col-6">
@@ -273,6 +277,10 @@
                               id="emailStaff"
                               placeholder="Enter email"
                             />
+                            <small
+                              class="text-danger"
+                              id="emailStaffEmailValidate"
+                            ></small>
                           </div>
                         </div>
                       </div>
@@ -287,6 +295,10 @@
                               id="firstNameStaff"
                               placeholder="Enter username"
                             />
+                            <small
+                              class="text-danger"
+                              id="firstNameStaffTextValidate"
+                            ></small>
                           </div>
                         </div>
                         <div class="col-6">
@@ -298,31 +310,37 @@
                               id="lastNameStaff"
                               placeholder="Enter email"
                             />
+                            <small
+                              class="text-danger"
+                              id="lastNameStaffTextValidate"
+                            ></small>
                           </div>
                         </div>
                       </div>
-
                       <div class="form-group">
-                        <label for="exampleInputPassword1">Password</label>
+                        <label for="staffPass">Password</label>
                         <input
                           type="password"
                           class="form-control"
-                          id="exampleInputPassword1"
+                          id="staffPass"
                           placeholder="Password"
                         />
+                        <small
+                          class="text-danger"
+                          id="staffPassPasswordValidate"
+                        ></small>
                       </div>
                       <div class="form-group">
-                        <label for="staffProfile">Input Profile</label>
+                        <label for="staffProfile">Input Profile Picture</label>
                         <div class="input-group">
                           <div class="custom-file">
                             <input
                               type="file"
                               class="custom-file-input"
                               id="staffProfile"
+                              accept="Image/jpg,Image/jpeg,Image/png"
                             />
-                            <label
-                              class="custom-file-label"
-                              for="exampleInputFile"
+                            <label class="custom-file-label" for="staffProfile"
                               >Choose file</label
                             >
                           </div>
@@ -388,95 +406,7 @@
     <!-- Bs custom file input -->
     <script src="adminLte/js/bs-custom-file-input.min.js"></script>
     <!-- My Script -->
-    <script>
-      $(function () {
-        $("#dataMobil").DataTable({
-          responsive: true,
-          autoWidth: false,
-        });
-
-        bsCustomFileInput.init();
-
-        $("#usernameStaff").keyup(function () {
-          let val = $("#usernameStaff").val();
-          if (val.length > 0) {
-            $("#staffUsername").html(val);
-          } else {
-            $("#staffUsername").html("Staff");
-          }
-        });
-
-        $("#emailStaff").keyup(function () {
-          let val = $("#emailStaff").val();
-          if (val.length > 0) {
-            $("#staffEmail").html(val);
-          } else {
-            $("#staffEmail").html("staff@gmail.com");
-          }
-        });
-
-        $("#staffProfile").change(function() {
-          const input = document.getElementById("staffProfile");
-          const imgPreview = document.querySelector("#imgPreview");
-
-          const file = new FileReader();
-          file.readAsDataURL(input.files[0]);
-
-          file.onload = function (e) {
-            imgPreview.src = e.target.result;
-          };
-        })
-
-        // auto type
-        // const words = ["Rizki Ramadhan"];
-        // let i = 0;
-        // let timer;
-        // let check = function () {
-        //   if ($("#usernameStaff").val() == "") {
-        //     typingEffect();
-        //   }
-        // };
-
-        // $("#usernameStaff").focus(function () {
-        //   $("#usernameStaff").val("Staff");
-        //   setTimeout(() => {
-        //     check();
-        //   }, 500);
-        // });
-
-        // function typingEffect() {
-        //   let word = words[i].split("");
-        //   var loopTyping = function () {
-        //     if (word.length > 0) {
-        //       document.getElementById("usernameStaff").value += word.shift();
-        //     } else {
-        //       setTimeout(() => {
-        //         deletingEffect();
-        //       }, 1500);
-        //       return false;
-        //     }
-        //     timer = setTimeout(loopTyping, 80);
-        //   };
-
-        //   loopTyping();
-
-        //   function deletingEffect() {
-        //     let word = words[i].split("");
-        //     var loopDeleting = function () {
-        //       if (word.length > 0) {
-        //         word.pop();
-        //         document.getElementById("usernameStaff").value = word.join("");
-        //         timer = setTimeout(loopDeleting, 80);
-        //       } else {
-        //         setTimeout(() => {
-        //           typingEffect();
-        //         }, 1500);
-        //       }
-        //     };
-        //     loopDeleting();
-        //   }
-        // }
-      });
-    </script>
+    <script src="js/function.js"></script>
+    <script src="js/manager.js"></script>
   </body>
 </html>
