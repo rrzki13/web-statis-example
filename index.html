@@ -65,7 +65,11 @@
               </div>
               <div class="row justify-content-center mb-3">
                 <div class="col-md-10">
-                  <button class="btn btn-primary inp-login w-100" id="sign-in" type="button">
+                  <button
+                    class="btn btn-primary inp-login w-100"
+                    id="sign-in"
+                    type="button"
+                  >
                     Sign In
                   </button>
                 </div>
@@ -106,6 +110,11 @@
           get("#password").value == "admin"
         ) {
           document.location.href = "manager2.html";
+        } else if (
+          get("#username").value == "staff" &&
+          get("#password").value == "staff"
+        ) {
+          document.location.href = "staff.html";
         } else {
           document.location.href = "main.html";
         }
