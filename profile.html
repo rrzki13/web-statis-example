@@ -39,10 +39,10 @@
             ></a>
           </li>
           <li class="nav-item d-none d-sm-inline-block">
-            <a href="#>" class="nav-link">Home</a>
+            <a href="#" class="nav-link">Home</a>
           </li>
           <li class="nav-item d-none d-sm-inline-block">
-            <a href="profile.html" class="nav-link">Profile</a>
+            <a href="" class="nav-link active">Profile</a>
           </li>
         </ul>
 
@@ -124,7 +124,7 @@
               <!-- Add icons to the links using the .nav-icon class
              with font-awesome or any other icon font library -->
               <li class="nav-item">
-                <a href="manager2.html" class="nav-link">
+                <a href="manager2.html" class="nav-link active">
                   <i class="nav-icon fas fa-home"></i>
                   <p>
                     Home
@@ -132,7 +132,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="managerStation.html" class="nav-link active">
+                <a href="managerStation.html" class="nav-link">
                   <i class="nav-icon fa fa-train"></i>
                   <p>Station</p>
                 </a>
@@ -198,11 +198,11 @@
           <div class="container-fluid">
             <div class="row mb-2">
               <div class="col-sm-6">
-                <h1>Station Data</h1>
+                <h1>My Profile</h1>
               </div>
               <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
-                  <li class="breadcrumb-item"><a href="#">Station</a></li>
+                  <li class="breadcrumb-item"><a href="#">My Profile</a></li>
                   <li class="breadcrumb-item active">Dashboard</li>
                 </ol>
               </div>
@@ -216,40 +216,133 @@
           <div class="container-fluid">
             <!-- * table content -->
             <div class="row">
-              <div class="col-12">
-                <div class="card">
-                  <div class="card-header">
-                    <h4>Station Data</h4>
-                  </div>
-                  <!-- /.card-header -->
-                  <div class="card-body">
-                    <table
-                      id="dataMobil"
-                      class="table table-bordered table-striped"
+              <div class="col-md-3">
+                <!-- Profile Image -->
+                <div class="card card-primary card-outline">
+                  <div class="card-body box-profile">
+                    <div class="text-center">
+                      <img
+                        class="profile-user-img img-fluid img-circle"
+                        id="imgPreview"
+                        src="dist/img/user1-128x128.jpg"
+                        alt="User profile picture"
+                      />
+                    </div>
+                    <h3 class="profile-username text-center" id="staffUsername">
+                      Manager
+                    </h3>
+                    <p class="text-muted text-center" id="staffEmail">
+                      manager@gmail.com
+                    </p>
+
+                    <button class="btn btn-primary btn-block" id="btn-edit-profile"
+                      ><b><i class="fa fa-user-edit mr-3"></i> Edit Profile</b></button
                     >
-                      <thead>
-                        <tr>
-                          <th>No</th>
-                          <th>Code</th>
-                          <th>Station Name</th>
-                          <th>Location</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td>1</td>
-                          <td>PSE</td>
-                          <td>Pasar Senen</td>
-                          <td>Jakarta</td>
-                        </tr>
-                      </tbody>
-                    </table>
                   </div>
                   <!-- /.card-body -->
                 </div>
                 <!-- /.card -->
               </div>
               <!-- /.col -->
+              <!-- left column -->
+              <div class="col-md-9">
+                <!-- general form elements -->
+                <div class="card card-primary">
+                  <div class="card-header">
+                    <h3 class="card-title">My Profile</h3>
+                  </div>
+                  <!-- /.card-header -->
+                  <!-- form start -->
+                  <form role="form">
+                    <div class="card-body">
+                      <div class="row">
+                        <div class="col-6">
+                          <div class="form-group">
+                            <label for="usernameProfile">Username</label>
+                            <input
+                              type="text"
+                              class="form-control"
+                              id="usernameProfile"
+                              placeholder="Enter username"
+                              disabled
+                              value="Manager"
+                            />
+                            <small
+                              class="text-danger"
+                              id="usernameProfileUsernameValidate"
+                            ></small>
+                          </div>
+                        </div>
+                        <div class="col-6">
+                          <div class="form-group">
+                            <label for="emailProfile">Email address</label>
+                            <input
+                              type="email"
+                              class="form-control"
+                              id="emailProfile"
+                              placeholder="Enter email"
+                              disabled
+                              value="manager@gmail.com"
+                            />
+                            <small
+                              class="text-danger"
+                              id="emailProfileEmailValidate"
+                            ></small>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="row">
+                        <div class="col-12">
+                          <div class="form-group">
+                            <label for="nameProfile">Your Name</label>
+                            <input
+                              type="text"
+                              class="form-control"
+                              id="nameProfile"
+                              placeholder="Enter username"
+                              disabled
+                              value="Rizki Ramadhan"
+                            />
+                            <small
+                              class="text-danger"
+                              id="nameProfileTextValidate"
+                            ></small>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="imgProfile">Input Profile Picture</label>
+                        <div class="input-group">
+                          <div class="custom-file">
+                            <input
+                              type="file"
+                              class="custom-file-input"
+                              id="imgProfile"
+                              accept="Image/jpg,Image/jpeg,Image/png"
+                              disabled
+                            />
+                            <label class="custom-file-label" for="imgProfile"
+                              >manager.jpg</label
+                            >
+                          </div>
+                          <div class="input-group-append">
+                            <span class="input-group-text" id="">Upload</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /.card-body -->
+
+                    <div class="card-footer">
+                      <button type="submit" id="btn-edit-my-profile" class="btn btn-primary" disabled>
+                        Submit
+                      </button>
+                    </div>
+                  </form>
+                </div>
+                <!-- /.card -->
+              </div>
             </div>
             <!-- /.row -->
           </div>
@@ -292,14 +385,10 @@
     <script src="dist/js/adminlte.min.js"></script>
     <!-- AdminLTE for demo purposes -->
     <script src="dist/js/demo.js"></script>
+    <!-- Bs custom file input -->
+    <script src="adminLte/js/bs-custom-file-input.min.js"></script>
     <!-- My Script -->
-    <script>
-      $(function () {
-        $("#dataMobil").DataTable({
-          responsive: true,
-          autoWidth: false,
-        });
-      });
-    </script>
+    <script src="js/function.js"></script>
+    <script src="js/profile.js"></script>
   </body>
 </html>
