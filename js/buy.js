@@ -141,3 +141,214 @@ get("#beliTiket").addEventListener("click", function () {
     }, 3000);
   }
 });
+
+// * new one
+const Toast = Swal.mixin({
+  toast: true,
+  position: "top-end",
+  showConfirmButton: false,
+  timer: 3000,
+});
+
+const containt = get("#seat_select");
+const range = [];
+const seat = [];
+
+for (const x of Array(50).keys()) {
+  range.push(x + 1);
+}
+
+range.forEach((r) => {
+  let seatNum = "";
+  if (r < 10) {
+    seatNum = "A0" + r;
+  } else {
+    seatNum = "A" + r;
+  }
+  seat.push(seatNum);
+});
+
+let a = "";
+let b = "";
+let c = "";
+let d = "";
+const notAvailable = ["A01", "A02", "A03", "A13", "A11", "A25", "A27", "A40"];
+let string = /* html */ `
+<div class="train p-2">
+<div class="row justify-content-center">
+  <div class="col-md-10 test1">
+  ${seat.forEach((s, i) => {
+    if (i < 10) {
+      let seatId = s;
+      let checking = "img/seat4.png";
+      let dataset = "0";
+      let notEmpty = notAvailable.filter((na) => na.includes(seatId));
+      if (notEmpty.length > 0) {
+        dataset = "1";
+        checking = "img/seat3.png";
+      }
+      a += `<img src="${checking}" class="seat" id="${seatId}" data-available="${dataset}"/>`;
+      setTimeout(() => {
+        get(".test1").innerHTML = a;
+      }, 100);
+    }
+  })}
+  </div>
+</div>
+<div class="row justify-content-center">
+  <div class="col-md-10 test2">
+  ${seat.forEach((s, i) => {
+    if (i >= 10 && i < 20) {
+      let seatId = s;
+      let checking = "img/seat4.png";
+      let dataset = "0";
+      let notEmpty = notAvailable.filter((na) => na.includes(seatId));
+      if (notEmpty.length > 0) {
+        dataset = "1";
+        checking = "img/seat3.png";
+      }
+      b += `<img src="${checking}" class="seat" id="${seatId}" data-available="${dataset}"/>`;
+      setTimeout(() => {
+        get(".test2").innerHTML = b;
+      }, 100);
+    }
+  })}
+  </div>
+</div>
+<div class="row my-3"></div>
+<div class="row justify-content-center">
+  <div class="col-md-10 test3">
+  ${seat.forEach((s, i) => {
+    if (i >= 20 && i < 30) {
+      let seatId = s;
+      let checking = "img/seat4.png";
+      let dataset = "0";
+      let notEmpty = notAvailable.filter((na) => na.includes(seatId));
+      if (notEmpty.length > 0) {
+        dataset = "1";
+        checking = "img/seat3.png";
+      }
+      c += `<img src="${checking}" class="seat" id="${seatId}" data-available="${dataset}"/>`;
+      setTimeout(() => {
+        get(".test3").innerHTML = c;
+      }, 100);
+    }
+  })}
+  </div>
+</div>
+<div class="row justify-content-center">
+  <div class="col-md-10 test4">
+  ${seat.forEach((s, i) => {
+    if (i >= 30 && i < 40) {
+      let seatId = s;
+      let checking = "img/seat4.png";
+      let dataset = "0";
+      let notEmpty = notAvailable.filter((na) => na.includes(seatId));
+      if (notEmpty.length > 0) {
+        dataset = "1";
+        checking = "img/seat3.png";
+      }
+      d += `<img src="${checking}" class="seat" id="${seatId}" data-available="${dataset}"/>`;
+      setTimeout(() => {
+        get(".test4").innerHTML = d;
+      }, 100);
+    }
+  })}
+  </div>
+</div>
+</div>
+`;
+
+containt.innerHTML = string;
+const maxChosse = parseInt(get("#jumlahTiket").value);
+document.addEventListener("click", function (e) {
+  if (e.target.classList.contains("seat")) {
+    // * check max chosse
+    const maxin = getAll("[data-chossen]");
+    const id = e.target.getAttribute("id");
+    const available = e.target.dataset.available;
+    if (available == "0") {
+      const checkVal = get("#seat").value;
+      if (maxin.length < maxChosse) {
+        if (e.target.dataset.chossen == "1") {
+          e.target.removeAttribute("data-chossen");
+          const valueInArray = checkVal.split(",");
+          const filterThat = valueInArray.filter((v) => !v.includes(id));
+          let theRealValue = "";
+          filterThat.map((f) => {
+            if (theRealValue.length > 0) {
+              theRealValue += `,${f}`;
+            } else {
+              theRealValue += f;
+            }
+          });
+          get("#seat").value = theRealValue;
+          e.target.src = "img/seat4.png";
+        } else {
+          e.target.setAttribute("data-chossen", "1");
+          if (checkVal.length > 0) {
+            get("#seat").value = `${checkVal},${id}`;
+          } else {
+            get("#seat").value = id;
+          }
+          e.target.src = "img/seat5.png";
+        }
+      } else {
+        if (e.target.dataset.chossen == "1") {
+          e.target.removeAttribute("data-chossen", "0");
+          const valueInArray = checkVal.split(",");
+          const filterThat = valueInArray.filter((v) => !v.includes(id));
+          let theRealValue = "";
+          filterThat.map((f) => {
+            if (theRealValue.length > 0) {
+              theRealValue += `,${f}`;
+            } else {
+              theRealValue += f;
+            }
+          });
+          get("#seat").value = theRealValue;
+          e.target.src = "img/seat4.png";
+        } else {
+          Toast.fire({
+            icon: "warning",
+            title: `Maksimal ${maxChosse} kursi`,
+          });
+        }
+      }
+    } else {
+      Toast.fire({
+        icon: "warning",
+        title: "Kursi sudah dipesan",
+      });
+    }
+  }
+});
+
+const jml_gerbong = 11;
+get("#gerbongSebelum").addEventListener("click", function () {
+  this.style.opacity = 0.8;
+  const checkThisOut = parseInt(get("#gerbongIni").textContent) - 1;
+  if (checkThisOut > 0) {
+    get("#gerbongIni").innerHTML = checkThisOut;
+    get(".train").style.marginLeft = "-450px";
+    get(".train").style.marginRight = "450px";
+    setTimeout(() => {
+      get(".train").style.opacity = 0;
+      this.style.opacity = 1;
+    }, 500);
+  }
+});
+
+get("#gerbongSelanjutnya").addEventListener("click", function () {
+  this.style.opacity = 0.8;
+  const checkThisOut = parseInt(get("#gerbongIni").textContent) + 1;
+  if (checkThisOut <= jml_gerbong) {
+    get("#gerbongIni").innerHTML = checkThisOut;
+    get(".train").style.marginLeft = "450px";
+    get(".train").style.marginRight = "-450px";
+    setTimeout(() => {
+      get(".train").style.opacity = 0;
+      this.style.opacity = 1;
+    }, 500);
+  }
+});
