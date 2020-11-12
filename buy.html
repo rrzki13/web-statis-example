@@ -120,7 +120,7 @@
                 type="text"
                 class="form-control"
                 id="jumlahTiket"
-                value="1"
+                value="3"
                 readonly
               />
             </div>
@@ -154,7 +154,7 @@
                 type="text"
                 class="form-control"
                 id="dewasa"
-                value="1"
+                value="2"
                 readonly
               />
             </div>
@@ -164,7 +164,7 @@
                 type="text"
                 class="form-control"
                 id="anak"
-                value="0"
+                value="1"
                 readonly
               />
             </div>
@@ -193,7 +193,7 @@
               <small class="text-danger" id="emailPemesanEmailValidate"></small>
             </div>
           </div>
-          <div class="row mb-2">
+          <div class="row mb-3">
             <div class="col-md-6">
               <label for="tglBerangkat" class="form-label"
                 >Tanggal Berangkat</label
@@ -207,7 +207,47 @@
               />
             </div>
           </div>
-          <div class="row mb-3">
+          <div class="row mb-2">
+            <div class="col-12">
+              <label for="seat" class="form-label font-weight-bold"
+                >Pilih Tempat duduk</label
+              >
+              <input type="hidden" id="seat" />
+            </div>
+            <div class="col-12 mt-3">
+              <div class="row">
+                <div class="col-md-9" id="seat_select"></div>
+              </div>
+            </div>
+          </div>
+          <div class="row mt-3 center-in-md">
+            <div class="col-8">
+              <div class="row">
+                <div class="col-5">
+                  <div class="row">
+                    <img
+                      src="img/button_left.png"
+                      class="button_arrow"
+                      id="gerbongSebelum"
+                    />
+                  </div>
+                </div>
+                <div class="col-2 h1 text-center">
+                  <h1 class="my-3" id="gerbongIni">1</h1>
+                </div>
+                <div class="col-5">
+                  <div class="row justify-content-end">
+                    <img
+                      src="img/button_right.png"
+                      class="button_arrow"
+                      id="gerbongSelanjutnya"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row mb-3 mt-5">
             <div class="col-md-12">
               <h3>Sub total</h3>
               <span class="text-muted" id="total">50000</span>
@@ -290,9 +330,10 @@
       src="https://kit.fontawesome.com/d1a508a7c1.js"
       crossorigin="anonymous"
     ></script>
+    <!-- SweetAlert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script src="js/function.js"></script>
     <script src="js/buy.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script src="js/JsBarcode.all.min.js"></script>
   </body>
 </html>
