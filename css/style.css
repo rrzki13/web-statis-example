@@ -373,6 +373,16 @@ a {
   cursor: pointer;
 }
 
+.start-from-zero {
+  margin-left: -450px;
+  margin-right: 450px;
+}
+
+.end-from-zero {
+  margin-left: 450px;
+  margin-right: -450px;
+}
+
 @media (max-width: 768px) {
   .none-in-md {
     display: none;
